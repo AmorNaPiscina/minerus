@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minerui's | O Melhor do Brasil</title>
+    <style>
+        /* General Styles */
+        :root {
+            --primary-color: #d4a017; /* Golden Yellow */
+            --secondary-color: #333;
+            --whatsapp-green: #25D366;
+            --text-color: #444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .logo span { color: var(--primary-color); }
+
+        nav a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1626202158826-62574764632c?q=80&w=1920&auto=format&fit=crop'); 
+            /* Note: Replace the URL above with a real photo of your product */
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .btn-cta {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s;
+        }
+
+        .btn-cta:hover {
+            transform: scale(1.05);
+            background-color: #b88a12;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 60px 5%;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .products h2 {
+            color: var(--secondary-color);
+            margin-bottom: 40px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-img {
+            height: 200px;
+            background-color: #ddd;
+            /* Placeholder for product image */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 { margin: 0 0 10px 0; }
+
+        /* About Section */
+        .about {
+            padding: 60px 5%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-text { flex: 1; }
+        .about-img { 
+            flex: 1; 
+            height: 300px; 
+            background-color: #ddd; 
+            border-radius: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-color);
+            color: white;
+            padding: 40px 5%;
+            text-align: center;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: var(--whatsapp-green);
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #1ebe57;
+            transform: scale(1.1);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            header { flex-direction: column; gap: 10px; }
+            nav { margin-top: 10px; }
+            .whatsapp-float { bottom: 20px; right: 20px; }
+        }
+    </style>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">Mineiru's</div>
+        <nav>
+            <a href="#home">Início</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>O Autêntico Biscoito Mineiro</h1>
+        <p>Qualidade premium, crocância perfeita e o sabor que encanta. Fornecedor direto para restaurantes,cafés e mercados</p>
+        <a href="https://wa.me/5511999999999?text=Olá, gostaria de saber mais sobre o Pão de Queijo." class="btn-cta" target="_blank">
+            <i class="fab fa-whatsapp"></i> Solicitar Orçamento
+        </a>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="produtos">
+        <h2>Nossos Produtos</h2>
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-img" style="background: url('https://images.unsplash.com/photo-1598155523122-38423bb4d6c1?auto=format&fit=crop&w=500&q=60') center/cover;"></div>
+                <div class="product-info">
+                    <h3>Biscoito Mineiro Tradicional</h3>
+                    <p>Massa crocante por fora e macia por dentro. Embalagem 1kg.</p>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-img" style="background: url('https://images.unsplash.com/photo-1626202158826-62574764632c?q=80&w=500&auto=format&fit=crop') center/cover;"></div>
+                <div class="product-info">
+                    <h3>Pão de Queijo Mineiro</h3>
+                    <p>PLACEHOLDER</p>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-img" style="background: url('https://images.unsplash.com/photo-1605494764329-785233422336?auto=format&fit=crop&w=500&q=60') center/cover;"></div>
+                <div class="product-info">
+                    <h3>Biscotio Mineiro com Queijo</h3>
+                    <p>Ideal para festas e eventos. Tamanho perfeito para petiscos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="sobre">
+        <div class="about-text">
+            <h2>Tradição Mineira</h2>
+            <p>Nossa empresa nasceu da paixão pela culinária brasileira. Utilizamos apenas polvilho de alta qualidade e queijos selecionados para garantir que o seu cliente tenha a melhor experiência.</p>
+            <p>Trabalhamos com logística eficiente para entregar o produto congelado em todo o país, garantindo a frescor no momento do preparo.</p>
+        </div>
+        <div class="about-img" style="background: url('https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=500&q=60') center/cover;"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contato">
+        <h3>Mineiru's</h3>
+        <p>Av. Rui Barbosa 548 - Tapejara, PR</p>
+        <p>Email: contato@paobrasil.com.br</p>
+        <p>&copy; 2023 Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <!-- Replace 5511999999999 with your actual number -->
+    <a href="https://wa.me/5511999999999?text=Olá, vim pelo site e gostaria de um orçamento." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
