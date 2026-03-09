@@ -1,67 +1,30 @@
-// Wait for the DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('nav a, .btn-cta').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            
-            // Only handle internal links
-            if (href.startsWith('#')) {
-                e.preventDefault();
-                const targetId = href.substring(1);
-                const targetElement = document.getElementById(targetId);
-                
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            }
-        });
-    });
+const cards = document.querySelectorAll('.card');
 
-    // WhatsApp button click tracking (optional analytics)
-    const whatsappBtn = document.getElementById('whatsappBtn');
-    if (whatsappBtn) {
-        whatsappBtn.addEventListener('click', function() {
-            console.log('WhatsApp button clicked');
-            // You can add analytics tracking here
-            // Example: gtag('event', 'whatsapp_click', { 'event_category': 'engagement' });
-        });
-    }
+cards.forEach((card) => {
+  const video = card.querySelector('video');
+  if (!video) return;
 
-    // Header scroll effect
-    const header = document.querySelector('header');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            header.style.boxShadow = '0 4px 10px rgba(0,0,0,0.15)';
-        } else {
-            header.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
-        }
-    });
+  card.addEventListener('mouseenter', () => {
+    video.currentTime = 0;
+    video.play().catch(() => {});
+  });
 
-    // Product cards animation on scroll
-    const productCards = document.querySelectorAll('.product-card');
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, {
-        threshold: 0.1
-    });
+  card.addEventListener('mouseleave', () => {
+    video.pause();
+    video.currentTime = 0;
+  });
+});
 
-    productCards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        observer.observe(card);
-    });
+let lockLoop = false;
+window.addEventListener('scroll', () => {
+  if (lockLoop) return;
 
-    console.log('Website loaded successfully!');
+  const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 2;
+  if (nearBottom) {
+    lockLoop = true;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(() => {
+      lockLoop = false;
+    }, 700);
+  }
 });

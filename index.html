@@ -1,95 +1,104 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mineiru's | O Melhor do Brasil</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mineiru's Padaria | Sabor Artesanal</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <header class="site-header">
+    <a class="brand" href="index.html">Mineiru's Padaria</a>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#sobre">Sobre</a>
+    </nav>
+  </header>
 
-    <!-- Header -->
-    <header>
-        <div class="logo"><span>Mineiru's</span> </div>
-        <nav>
-            <a href="#home">Início</a>
-            <a href="#produtos">Produtos</a>
-            <a href="#sobre">Sobre</a>
-            <a href="#contato">Contato</a>
-        </nav>
-        <div class="header-cta">
-            <a href="https://wa.me/5511999999999?text=Olá, gostaria de saber mais sobre o Pão de Queijo." class="btn-cta" target="_blank">
-                <i class="fab fa-whatsapp"></i> Orçamento
-            </a>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <h1>O Autêntico sabor Mineiro</h1>
-        <p>Qualidade premium, crocância perfeita e o sabor irresistível. Fornecedor para Supermercados, Restaurantes, Padarias e muito mais!.</p>
-        <a href="https://wa.me/5511999999999?text=Olá, gostaria de saber mais sobre o Pão de Queijo." class="btn-cta" target="_blank">
-            <i class="fab fa-whatsapp"></i> Solicitar Orçamento
-        </a>
+  <main>
+    <section class="hero">
+      <h1>Padaria Mineiru's</h1>
+      <p>Tradição mineira com sabores artesanais para o seu dia.</p>
+      <a class="btn" href="#produtos">Ver produtos</a>
     </section>
 
-    <!-- Products Section -->
-    <section class="products" id="produtos">
-        <h2>Nossos Produtos</h2>
-        <div class="product-grid">
-            <!-- Product 1 -->
-            <div class="product-card">
-                <div class="product-img" style="background: url('https://images.unsplash.com/photo-1598155523122-38423bb4d6c1?auto=format&fit=crop&w=500&q=60') center/cover;"></div>
-                <div class="product-info">
-                    <h3>Biscoito Mineiro Tradicional</h3>
-                    <p>Massa crocante por fora e macia por dentro. Embalagem 1kg.</p>
-                </div>
-            </div>
-            <!-- Product 2 -->
-            <div class="product-card">
-                <div class="product-img" style="background: url('https://images.unsplash.com/photo-1626202158826-62574764632c?q=80&w=500&auto=format&fit=crop') center/cover;"></div>
-                <div class="product-info">
-                    <h3>Pão de Queijo Mineiro</h3>
-                    <p>Opção 100% segura para celíacos. Sabor inigualável.</p>
-                </div>
-            </div>
-            <!-- Product 3 -->
-            <div class="product-card">
-                <div class="product-img" style="background: url('https://images.unsplash.com/photo-1605494764329-785233422336?auto=format&fit=crop&w=500&q=60') center/cover;"></div>
-                <div class="product-info">
-                    <h3>Biscoito Mineiro com Queijo</h3>
-                    <p>Ideal para festas e eventos. Tamanho perfeito para petiscos.</p>
-                </div>
-            </div>
-        </div>
+    <section id="produtos" class="section">
+      <h2>Nossos produtos</h2>
+      <p class="helper">Passe o mouse sobre a foto para ver o vídeo do produto.</p>
+      <div class="grid">
+        <article class="card">
+          <div class="media">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80" alt="Pão francês" />
+            <video muted loop playsinline preload="metadata">
+              <source src="https://cdn.coverr.co/videos/coverr-baker-with-fresh-bread-1579/1080p.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <h3>Pão Francês</h3>
+          <p>Casquinha crocante e miolo macio.</p>
+          <a href="produto-pao-frances.html">Ver produto</a>
+        </article>
+
+        <article class="card">
+          <div class="media">
+            <img src="https://images.unsplash.com/photo-1626202158826-62574764632c?q=80&w=900&auto=format&fit=crop" alt="Pão de queijo" />
+            <video muted loop playsinline preload="metadata">
+              <source src="https://cdn.coverr.co/videos/coverr-freshly-baked-croissants-1578/1080p.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <h3>Pão de Queijo</h3>
+          <p>Receita mineira com queijo curado.</p>
+          <a href="produto-pao-de-queijo.html">Ver produto</a>
+        </article>
+
+        <article class="card">
+          <div class="media">
+            <img src="https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=900&q=80" alt="Bolo de fubá" />
+            <video muted loop playsinline preload="metadata">
+              <source src="https://cdn.coverr.co/videos/coverr-homemade-cake-1577/1080p.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <h3>Bolo de Fubá</h3>
+          <p>Fofinho, com toque de erva-doce.</p>
+          <a href="produto-bolo-de-fuba.html">Ver produto</a>
+        </article>
+
+        <article class="card">
+          <div class="media">
+            <img src="https://images.unsplash.com/photo-1559054663-e8d23213f55c?auto=format&fit=crop&w=900&q=80" alt="Sanduíche natural" />
+            <video muted loop playsinline preload="metadata">
+              <source src="https://cdn.coverr.co/videos/coverr-making-a-sandwich-9710/1080p.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <h3>Sanduíche Natural</h3>
+          <p>Opção leve para o dia a dia.</p>
+          <a href="produto-sanduiche-natural.html">Ver produto</a>
+        </article>
+
+        <article class="card">
+          <div class="media">
+            <img src="https://images.unsplash.com/photo-1464306076886-da185f6a9d05?auto=format&fit=crop&w=900&q=80" alt="Torta de frango" />
+            <video muted loop playsinline preload="metadata">
+              <source src="https://cdn.coverr.co/videos/coverr-homemade-pie-8990/1080p.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <h3>Torta de Frango</h3>
+          <p>Recheio cremoso e massa amanteigada.</p>
+          <a href="produto-torta-de-frango.html">Ver produto</a>
+        </article>
+      </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="sobre">
-        <div class="about-text">
-            <h2>Tradição Mineira</h2>
-            <p>Nossa empresa nasceu da paixão pela culinária brasileira. Utilizamos apenas polvilho de alta qualidade e queijos selecionados para garantir que o seu cliente tenha a melhor experiência.</p>
-            <p>Trabalhamos com logística eficiente para entregar o produto congelado em todo o país, garantindo a frescor no momento do preparo.</p>
-        </div>
-        <div class="about-img" style="background: url('https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=500&q=60') center/cover;"></div>
+    <section id="sobre" class="section about">
+      <h2>Sobre a Mineiru's</h2>
+      <p>Somos uma padaria artesanal focada em qualidade, tradição e sabor caseiro.</p>
     </section>
+  </main>
 
-    <!-- Footer -->
-    <footer id="contato">
-        <h3>PãoBrasil Atacado</h3>
-        <p>Rua Exemplo, 123 - São Paulo, SP</p>
-        <p>Email: contato@paobrasil.com.br</p>
-        <p>&copy; 2023 Todos os direitos reservados.</p>
-    </footer>
+  <footer>
+    <p>Mineiru's Padaria</p>
+  </footer>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/5511999999999?text=Olá, vim pelo site e gostaria de um orçamento." class="whatsapp-float" target="_blank" id="whatsappBtn">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
