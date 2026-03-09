@@ -1,30 +1,40 @@
-const cards = document.querySelectorAll('.card');
+const form = document.getElementById('orderForm');
+const feedback = document.getElementById('feedback');
 
-cards.forEach((card) => {
-  const video = card.querySelector('video');
-  if (!video) return;
+if (form) {
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    feedback.textContent = '';
+    feedback.className = '';
 
-  card.addEventListener('mouseenter', () => {
-    video.currentTime = 0;
-    video.play().catch(() => {});
+    const data = Object.fromEntries(new FormData(form).entries());
+    data.quantity = Number(data.quantity);
+
+    if (data.state !== 'PR') {
+      feedback.textContent = 'Desculpe, aceitamos pedidos somente do Paraná (PR).';
+      feedback.classList.add('error');
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/orders', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Não foi possível enviar seu pedido.');
+      }
+
+      feedback.textContent = `Pedido #${result.order.id} criado com sucesso. NF pendente no DataCiss.`;
+      feedback.classList.add('ok');
+      form.reset();
+    } catch (error) {
+      feedback.textContent = error.message;
+      feedback.classList.add('error');
+    }
   });
-
-  card.addEventListener('mouseleave', () => {
-    video.pause();
-    video.currentTime = 0;
-  });
-});
-
-let lockLoop = false;
-window.addEventListener('scroll', () => {
-  if (lockLoop) return;
-
-  const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 2;
-  if (nearBottom) {
-    lockLoop = true;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    setTimeout(() => {
-      lockLoop = false;
-    }, 700);
-  }
-});
+}

@@ -12,76 +12,41 @@
     <nav>
       <a href="index.html">Início</a>
       <a href="#produtos">Produtos</a>
-      <a href="#sobre">Sobre</a>
+      <a href="#pedido">Pedido</a>
     </nav>
   </header>
 
   <main>
     <section class="hero">
       <h1>Padaria Mineiru's</h1>
-      <p>Tradição mineira com sabores artesanais para o seu dia.</p>
-      <a class="btn" href="#produtos">Ver produtos</a>
+      <p>Tradição mineira com entrega exclusiva no Paraná.</p>
+      <a class="btn" href="#pedido">Fazer pedido</a>
     </section>
 
     <section id="produtos" class="section">
       <h2>Nossos produtos</h2>
-      <p class="helper">Passe o mouse sobre a foto para ver o vídeo do produto.</p>
       <div class="grid">
         <article class="card">
-          <div class="media">
-            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80" alt="Pão francês" />
-            <video muted loop playsinline preload="metadata">
-              <source src="https://cdn.coverr.co/videos/coverr-baker-with-fresh-bread-1579/1080p.mp4" type="video/mp4" />
-            </video>
-          </div>
           <h3>Pão Francês</h3>
           <p>Casquinha crocante e miolo macio.</p>
           <a href="produto-pao-frances.html">Ver produto</a>
         </article>
-
         <article class="card">
-          <div class="media">
-            <img src="https://images.unsplash.com/photo-1626202158826-62574764632c?q=80&w=900&auto=format&fit=crop" alt="Pão de queijo" />
-            <video muted loop playsinline preload="metadata">
-              <source src="https://cdn.coverr.co/videos/coverr-freshly-baked-croissants-1578/1080p.mp4" type="video/mp4" />
-            </video>
-          </div>
           <h3>Pão de Queijo</h3>
           <p>Receita mineira com queijo curado.</p>
           <a href="produto-pao-de-queijo.html">Ver produto</a>
         </article>
-
         <article class="card">
-          <div class="media">
-            <img src="https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=900&q=80" alt="Bolo de fubá" />
-            <video muted loop playsinline preload="metadata">
-              <source src="https://cdn.coverr.co/videos/coverr-homemade-cake-1577/1080p.mp4" type="video/mp4" />
-            </video>
-          </div>
           <h3>Bolo de Fubá</h3>
           <p>Fofinho, com toque de erva-doce.</p>
           <a href="produto-bolo-de-fuba.html">Ver produto</a>
         </article>
-
         <article class="card">
-          <div class="media">
-            <img src="https://images.unsplash.com/photo-1559054663-e8d23213f55c?auto=format&fit=crop&w=900&q=80" alt="Sanduíche natural" />
-            <video muted loop playsinline preload="metadata">
-              <source src="https://cdn.coverr.co/videos/coverr-making-a-sandwich-9710/1080p.mp4" type="video/mp4" />
-            </video>
-          </div>
           <h3>Sanduíche Natural</h3>
           <p>Opção leve para o dia a dia.</p>
           <a href="produto-sanduiche-natural.html">Ver produto</a>
         </article>
-
         <article class="card">
-          <div class="media">
-            <img src="https://images.unsplash.com/photo-1464306076886-da185f6a9d05?auto=format&fit=crop&w=900&q=80" alt="Torta de frango" />
-            <video muted loop playsinline preload="metadata">
-              <source src="https://cdn.coverr.co/videos/coverr-homemade-pie-8990/1080p.mp4" type="video/mp4" />
-            </video>
-          </div>
           <h3>Torta de Frango</h3>
           <p>Recheio cremoso e massa amanteigada.</p>
           <a href="produto-torta-de-frango.html">Ver produto</a>
@@ -89,14 +54,44 @@
       </div>
     </section>
 
-    <section id="sobre" class="section about">
-      <h2>Sobre a Mineiru's</h2>
-      <p>Somos uma padaria artesanal focada em qualidade, tradição e sabor caseiro.</p>
+    <section id="pedido" class="section order">
+      <h2>Faça seu pedido</h2>
+      <p class="notice">Atenção: aceitamos pedidos apenas do estado do Paraná (PR).</p>
+      <form id="orderForm">
+        <label>Nome
+          <input type="text" name="customerName" required />
+        </label>
+        <label>Telefone
+          <input type="tel" name="phone" required />
+        </label>
+        <label>Produto
+          <select name="productId" required>
+            <option value="pao-frances">Pão Francês</option>
+            <option value="pao-de-queijo">Pão de Queijo</option>
+            <option value="bolo-de-fuba">Bolo de Fubá</option>
+            <option value="sanduiche-natural">Sanduíche Natural</option>
+            <option value="torta-de-frango">Torta de Frango</option>
+          </select>
+        </label>
+        <label>Quantidade
+          <input type="number" name="quantity" min="1" value="1" required />
+        </label>
+        <label>Estado
+          <select name="state" required>
+            <option value="PR" selected>Paraná (PR)</option>
+            <option value="SC">Santa Catarina (SC)</option>
+            <option value="SP">São Paulo (SP)</option>
+            <option value="RS">Rio Grande do Sul (RS)</option>
+          </select>
+        </label>
+        <button class="btn" type="submit">Enviar pedido</button>
+      </form>
+      <p id="feedback" aria-live="polite"></p>
     </section>
   </main>
 
   <footer>
-    <p>Mineiru's Padaria</p>
+    <p>Mineiru's Padaria • Atendimento no Paraná</p>
   </footer>
 
   <script src="script.js"></script>
