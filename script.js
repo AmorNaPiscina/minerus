@@ -1,40 +1,28 @@
-const form = document.getElementById('orderForm');
-const feedback = document.getElementById('feedback');
-
-if (form) {
-  form.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    feedback.textContent = '';
-    feedback.className = '';
-
-    const data = Object.fromEntries(new FormData(form).entries());
-    data.quantity = Number(data.quantity);
-
-    if (data.state !== 'PR') {
-      feedback.textContent = 'Desculpe, aceitamos pedidos somente do Paraná (PR).';
-      feedback.classList.add('error');
-      return;
-    }
-
-    try {
-      const response = await fetch('/api/orders', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
-
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(result.error || 'Não foi possível enviar seu pedido.');
-      }
-
-      feedback.textContent = `Pedido #${result.order.id} criado com sucesso. NF pendente no DataCiss.`;
-      feedback.classList.add('ok');
-      form.reset();
-    } catch (error) {
-      feedback.textContent = error.message;
-      feedback.classList.add('error');
+﻿// Smooth scroll and active link highlight
+const links = document.querySelectorAll('a[href^="#"]');
+links.forEach(link => {
+  link.addEventListener('click', (event) => {
+    const targetId = link.getAttribute('href');
+    if (targetId.startsWith('#')) {
+      event.preventDefault();
+      const targetEl = document.querySelector(targetId);
+      if (!targetEl) return;
+      targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
+});
+
+const menuLinks = document.querySelectorAll('header nav a');
+function setActiveLink() {
+  const fromTop = window.scrollY + 100;
+  menuLinks.forEach(link => {
+    if (!link.hash) return;
+    const section = document.querySelector(link.hash);
+    if (!section) return;
+    const top = section.offsetTop;
+    const height = section.offsetHeight;
+    link.classList.toggle('active', fromTop >= top && fromTop < top + height);
+  });
 }
+window.addEventListener('scroll', setActiveLink);
+setActiveLink();

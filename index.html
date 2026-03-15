@@ -1,99 +1,305 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mineiru's Padaria | Sabor Artesanal</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mineiru's — Biscoitos Artesanais e Pão de Queijo Gourmet</title>
+    <meta name="description" content="Mineiru's: biscoitos de polvilho e pão de queijo gourmet feitos à mão desde 2000. Presentes em 40+ cidades no Paraná. Peça pelo WhatsApp (44) 99149-1104.">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="index.html">Mineiru's Padaria</a>
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="#produtos">Produtos</a>
-      <a href="#pedido">Pedido</a>
-    </nav>
-  </header>
 
-  <main>
-    <section class="hero">
-      <h1>Padaria Mineiru's</h1>
-      <p>Tradição mineira com entrega exclusiva no Paraná.</p>
-      <a class="btn" href="#pedido">Fazer pedido</a>
-    </section>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="brand">Mineiru<span>'s</span></a>
+            <nav aria-label="Menu principal">
+                <a href="#produtos">Produtos</a>
+                <a href="#historia">História</a>
+                <a href="#cidades">Cidades</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
 
-    <section id="produtos" class="section">
-      <h2>Nossos produtos</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Pão Francês</h3>
-          <p>Casquinha crocante e miolo macio.</p>
-          <a href="produto-pao-frances.html">Ver produto</a>
-        </article>
-        <article class="card">
-          <h3>Pão de Queijo</h3>
-          <p>Receita mineira com queijo curado.</p>
-          <a href="produto-pao-de-queijo.html">Ver produto</a>
-        </article>
-        <article class="card">
-          <h3>Bolo de Fubá</h3>
-          <p>Fofinho, com toque de erva-doce.</p>
-          <a href="produto-bolo-de-fuba.html">Ver produto</a>
-        </article>
-        <article class="card">
-          <h3>Sanduíche Natural</h3>
-          <p>Opção leve para o dia a dia.</p>
-          <a href="produto-sanduiche-natural.html">Ver produto</a>
-        </article>
-        <article class="card">
-          <h3>Torta de Frango</h3>
-          <p>Recheio cremoso e massa amanteigada.</p>
-          <a href="produto-torta-de-frango.html">Ver produto</a>
-        </article>
-      </div>
-    </section>
+    <main>
 
-    <section id="pedido" class="section order">
-      <h2>Faça seu pedido</h2>
-      <p class="notice">Atenção: aceitamos pedidos apenas do estado do Paraná (PR).</p>
-      <form id="orderForm">
-        <label>Nome
-          <input type="text" name="customerName" required />
-        </label>
-        <label>Telefone
-          <input type="tel" name="phone" required />
-        </label>
-        <label>Produto
-          <select name="productId" required>
-            <option value="pao-frances">Pão Francês</option>
-            <option value="pao-de-queijo">Pão de Queijo</option>
-            <option value="bolo-de-fuba">Bolo de Fubá</option>
-            <option value="sanduiche-natural">Sanduíche Natural</option>
-            <option value="torta-de-frango">Torta de Frango</option>
-          </select>
-        </label>
-        <label>Quantidade
-          <input type="number" name="quantity" min="1" value="1" required />
-        </label>
-        <label>Estado
-          <select name="state" required>
-            <option value="PR" selected>Paraná (PR)</option>
-            <option value="SC">Santa Catarina (SC)</option>
-            <option value="SP">São Paulo (SP)</option>
-            <option value="RS">Rio Grande do Sul (RS)</option>
-          </select>
-        </label>
-        <button class="btn" type="submit">Enviar pedido</button>
-      </form>
-      <p id="feedback" aria-live="polite"></p>
-    </section>
-  </main>
+        <!-- HERO -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-inner">
+                <div>
+                    <span class="hero-tag">Desde 2000 — Tradição Mineira</span>
+                    <h1 id="hero-title">O sabor<br><em>que derrete</em><br>na boca.</h1>
+                    <p>Biscoitos de polvilho e pão de queijo gourmet, feitos à mão com ingredientes selecionados. Entregamos em 40+ cidades no Paraná.</p>
+                    <div class="hero-badges">
+                        <span class="hero-badge">Ultracongelado −40°C</span>
+                        <span class="hero-badge">Embalagem 5 camadas</span>
+                        <span class="hero-badge">Padrão Europeu</span>
+                    </div>
+                    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+                        <a class="btn" href="#produtos">Ver produtos</a>
+                        <a class="btn btn-outline" href="https://wa.me/5544991491104" target="_blank" rel="noopener noreferrer">Pedir pelo WhatsApp</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrap">
+                    <img src="https://images.unsplash.com/photo-1527515637460-ec65086ab4d8?auto=format&fit=crop&w=1200&q=80"
+                        alt="Biscoitos artesanais Mineiru's" width="1200" height="900" loading="lazy">
+                </div>
+            </div>
+        </section>
 
-  <footer>
-    <p>Mineiru's Padaria • Atendimento no Paraná</p>
-  </footer>
+        <!-- STATS -->
+        <div class="stats-bar">
+            <div class="stats-inner">
+                <div class="stat">
+                    <div class="stat-num">2000</div>
+                    <div class="stat-label">Fundada em</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">40+</div>
+                    <div class="stat-label">Cidades atendidas</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">−40°C</div>
+                    <div class="stat-label">Ultracongelamento</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">5</div>
+                    <div class="stat-label">Camadas de proteção</div>
+                </div>
+            </div>
+        </div>
 
-  <script src="script.js"></script>
+        <!-- PRODUTOS -->
+        <section id="produtos" class="produtos-bg">
+            <div class="container">
+                <div class="section-label">Nossos produtos</div>
+                <h2 class="section-title">Feitos com mais queijo,<br>mais carinho.</h2>
+                <p class="section-sub">Cada produto é ultracongelado a −40°C para chegar fresquinho na sua mesa, com o mesmo sabor e crocância de sempre.</p>
+
+                <div class="grid-produtos">
+
+                    <a href="bisc-parm.html" class="card-produto">
+                        <div class="card-produto-img">
+                            <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=800&q=80"
+                                alt="Biscoito de Polvilho com Parmesão" width="800" height="600" loading="lazy">
+                        </div>
+                        <div class="card-produto-body">
+                            <div class="card-produto-tag">Mais vendido</div>
+                            <h3>Biscoito de Polvilho Gourmet</h3>
+                            <p>Com parmesão gourmet. Derrete na boca. Embalagem de 2,2 Kg ou 470g.</p>
+                            <div class="card-produto-preco">
+                                <span class="preco-old">R$ 21,90/kg</span>
+                                <span class="preco-atual">R$ 18,99</span>
+                                <span class="preco-promo">/kg promo</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="paoqueijo.html" class="card-produto">
+                        <div class="card-produto-img">
+                            <img src="https://images.unsplash.com/photo-1603003560447-29df0613eeeb?auto=format&fit=crop&w=800&q=80"
+                                alt="Pão de Queijo Gourmet" width="800" height="600" loading="lazy">
+                        </div>
+                        <div class="card-produto-body">
+                            <div class="card-produto-tag">Lançamento 2025</div>
+                            <h3>Pão de Queijo Gourmet</h3>
+                            <p>Sabor amanteigado. Feito com mozzarela e parmesão. Embalagem 1 Kg.</p>
+                            <div class="card-produto-preco">
+                                <span class="preco-old">R$ 18,99/kg</span>
+                                <span class="preco-atual">R$ 15,99</span>
+                                <span class="preco-promo">/kg promo</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="bisc-nutella.html" class="card-produto">
+                        <div class="card-produto-img">
+                            <img src="https://images.unsplash.com/photo-1601924638867-3d1cf48f3b4a?auto=format&fit=crop&w=800&q=80"
+                                alt="Biscoito com Nutella" width="800" height="600" loading="lazy">
+                        </div>
+                        <div class="card-produto-body">
+                            <div class="card-produto-tag">Especial</div>
+                            <h3>Biscoito com Nutella</h3>
+                            <p>Biscoito mineiro recheado com Nutella cremosa. Irresistível.</p>
+                            <div class="card-produto-preco">
+                                <span class="preco-atual">R$ 14,00</span>
+                                <span class="preco-promo">6 unid.</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="bisc-trad.html" class="card-produto">
+                        <div class="card-produto-img">
+                            <img src="https://images.unsplash.com/photo-1626131935467-2d7d1c83d1c6?auto=format&fit=crop&w=800&q=80"
+                                alt="Biscoito Tradicional" width="800" height="600" loading="lazy">
+                        </div>
+                        <div class="card-produto-body">
+                            <div class="card-produto-tag">Clássico</div>
+                            <h3>Biscoito Tradicional</h3>
+                            <p>Receita de família. Crocância e aroma do interior mineiro.</p>
+                            <div class="card-produto-preco">
+                                <span class="preco-atual">R$ 12,00</span>
+                                <span class="preco-promo">8 unid.</span>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- HISTÓRIA -->
+        <section id="historia">
+            <div class="container">
+                <div style="display:grid;gap:3rem;align-items:start;" id="historia-grid">
+                    <div>
+                        <div class="section-label">Nossa história</div>
+                        <h2 class="section-title">Tradição desde<br>o ano 2000.</h2>
+                        <p class="section-sub">Uma receita compartilhada por uma cliente mineira se tornou a base de um negócio com presença em mais de 40 cidades.</p>
+
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-ano">2000</div>
+                                <p>Dona Maria compartilhou a receita original dos biscoitos mineiros com o Supermercado Ouro Verde.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-ano">2001</div>
+                                <p>Dona Marta aprimorou a receita com toque especial de parmesão e iniciou a produção em maior escala.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-ano">2017</div>
+                                <p>Chef Paloma Martins trouxe novo aprimoramento, tornando a receita perfeita para produção em massa.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-ano">2022</div>
+                                <p>Leandro Corço e Paloma Martins uniram forças para levar o sabor aos lares — início dos biscoitos congelados.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-ano">2024</div>
+                                <p>Chefs Paloma e Sirlene aperfeiçoaram a receita. A produção ganhou força, chegando a mais de 30 cidades.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-ano">2025</div>
+                                <p>Lançamento do Pão de Queijo Mineiru's e das versões congeladas, levando o sabor mineiro para sua casa.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="section-label">Nossos valores</div>
+                        <h2 class="section-title">Mais queijo.<br>Mais cuidado.</h2>
+                        <div class="valores-grid">
+                            <div class="valor-card">
+                                <div class="valor-icone">🧀</div>
+                                <h4>Mais queijo</h4>
+                                <p>Generosidade real no sabor e na cremosidade de cada produto.</p>
+                            </div>
+                            <div class="valor-card">
+                                <div class="valor-icone">❄️</div>
+                                <h4>Ultracongelado</h4>
+                                <p>−40°C preserva textura, sabor e inibe bactérias com segurança.</p>
+                            </div>
+                            <div class="valor-card">
+                                <div class="valor-icone">🏆</div>
+                                <h4>Excelência</h4>
+                                <p>Padrão impecável em cada lote, do preparo à entrega.</p>
+                            </div>
+                            <div class="valor-card">
+                                <div class="valor-icone">🚚</div>
+                                <h4>Logística própria</h4>
+                                <p>Frota refrigerada própria para entregas rápidas em 40+ cidades.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CIDADES -->
+        <section id="cidades" class="cidades-bg">
+            <div class="container">
+                <div class="section-label" style="color:rgba(0,0,0,0.5)">Onde encontrar</div>
+                <h2 class="section-title" style="color:var(--preto)">40+ cidades<br>no Paraná.</h2>
+                <div class="cidades-grid">
+                    <span class="cidade-pill">Araruna</span>
+                    <span class="cidade-pill">Assis Chateaubriand</span>
+                    <span class="cidade-pill">Campo Mourão</span>
+                    <span class="cidade-pill">Cianorte</span>
+                    <span class="cidade-pill">Cruzeiro do Oeste</span>
+                    <span class="cidade-pill">Engenheiro Beltrão</span>
+                    <span class="cidade-pill">Floresta</span>
+                    <span class="cidade-pill">Goioerê</span>
+                    <span class="cidade-pill">Icaraíma</span>
+                    <span class="cidade-pill">Ivaiporã</span>
+                    <span class="cidade-pill">Ivatuba</span>
+                    <span class="cidade-pill">Japurá</span>
+                    <span class="cidade-pill">Jussara</span>
+                    <span class="cidade-pill">Mandaguaçu</span>
+                    <span class="cidade-pill">Mariluz</span>
+                    <span class="cidade-pill">Maringá</span>
+                    <span class="cidade-pill">Manoel Ribas</span>
+                    <span class="cidade-pill">Paiçandu</span>
+                    <span class="cidade-pill">Peabiru</span>
+                    <span class="cidade-pill">Pitanga</span>
+                    <span class="cidade-pill">Sarandi</span>
+                    <span class="cidade-pill">São João do Ivaí</span>
+                    <span class="cidade-pill">São Tomé</span>
+                    <span class="cidade-pill">Tapejara</span>
+                    <span class="cidade-pill">Terra Boa</span>
+                    <span class="cidade-pill">Tuneiras do Oeste</span>
+                    <span class="cidade-pill">Umuarama</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO -->
+        <section id="contato">
+            <div class="container">
+                <div class="section-label">Fale conosco</div>
+                <h2 class="section-title">Peça agora.</h2>
+                <div class="contato-grid">
+                    <div class="contato-card">
+                        <h4>WhatsApp</h4>
+                        <a href="https://wa.me/5544991491104" target="_blank" rel="noopener noreferrer">(44) 99149-1104</a>
+                    </div>
+                    <div class="contato-card">
+                        <h4>Telefone</h4>
+                        <p>44 3677-1424 / 44 99134-6735</p>
+                    </div>
+                    <div class="contato-card">
+                        <h4>Instagram</h4>
+                        <a href="https://instagram.com/biscoito.mineirus" target="_blank" rel="noopener noreferrer">@biscoito.mineirus</a>
+                    </div>
+                    <div class="contato-card">
+                        <h4>Site</h4>
+                        <a href="https://www.mineirus.com.br" target="_blank" rel="noopener noreferrer">www.mineirus.com.br</a>
+                    </div>
+                    <div class="contato-card">
+                        <h4>Endereço</h4>
+                        <p>Av. Rui Barbosa, 548, sala 01, Centro<br>Tapejara – PR, CEP 87430-000</p>
+                    </div>
+                    <div class="contato-card">
+                        <h4>CNPJ</h4>
+                        <p>Corço e Corço LTDA<br>78.041.571/0004-04</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-logo">Mineiru's</div>
+            <div class="footer-tagline">Paixão por pão e pão por paixão.</div>
+            <ul class="social-links" aria-label="Redes sociais">
+                <li><a href="https://instagram.com/biscoito.mineirus" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                <li><a href="https://wa.me/5544991491104" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                <li><a href="https://www.mineirus.com.br" target="_blank" rel="noopener noreferrer">Site oficial</a></li>
+            </ul>
+            <div class="footer-copy">© 2026 Corço e Corço LTDA · CNPJ 78.041.571/0004-04 · Tapejara – PR</div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
 </body>
 </html>

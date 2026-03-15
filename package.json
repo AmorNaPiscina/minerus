@@ -1,9 +1,0 @@
-{
-  "name": "mineirus-padaria-site",
-  "version": "1.0.0",
-  "description": "Site da padaria Mineiru's com API de pedidos e integração DataCiss",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  }
-}
